@@ -53,6 +53,11 @@ group :development do
 end
 
 group :test do
+  # Fabricate objects for tests!
+  gem 'fabrication'
+  # Shoulda-matchers
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing' # If you are using Rails 5.x
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
