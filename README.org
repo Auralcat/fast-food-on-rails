@@ -1,0 +1,33 @@
+* Fast Food on Rails
+
+This is a web app to review fast-food restaurants.
+Inspiration came from [[https://medium.freecodecamp.org/6-absurd-ideas-for-building-your-first-web-application-24afca35e519][here.]]
+
+** Specs list
+   + [ ] Ability to create an account with a picture, username and location
+   + [ ] Use Google Maps to let a user pick out a specific restaurant, either through searching a location on the map or through typing in a name and choosing from a list (typeahead)
+   + [ ] Allow the user to write a review
+   + [ ] Allow user to rate the following fast-food specific topics on 1–5 scale: Bathroom Quality, Staff, Cleanliness, Drive-thru Sassy Level, Delivery Speed
+   + [ ] Ability to add pictures to the review
+   + [ ] Responsive design down to mobile
+   + [ ] Encrypt passwords in database
+   + [ ] Encrypt email addresses in database
+   + [ ] Create recovery tokens for emails and passwords
+   + [ ] Filter sensitive data from logs
+** Ruby version
+
+** System dependencies
+
+** Configuration
+
+** Database creation
+
+** Database initialization
+
+** How to run the test suite
+
+** Services (job queues, cache servers, search engines, etc.)
+
+** Deployment instructions
+
+** ...
