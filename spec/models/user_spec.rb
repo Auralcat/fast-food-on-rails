@@ -4,9 +4,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'Field validations' do
-    user = User.new(name: 'Random Steve',
-                    password: 'supersafepass',
-                    location: 'Knowhere')
+    let(:user) { Fabricate(:user) }
     context 'general validations' do
       it 'is valid with all the validations' do
         expect(user).to be_valid
@@ -23,21 +21,21 @@ RSpec.describe User, type: :model do
       end
     end
 
-    context 'passwords' do
-      it 'does not save blank passwords' do
-        user.password = ''
-        expect(user).to_not be_valid
-      end
-
-      it 'does not save passwords longer than 30 characters' do
-        user.password = 'a' * 31
-        expect(user).to_not be_valid
-      end
-
-      it 'does not save passwords shorter than 4 characters' do
-        user.password = 'b' * 3
+    context 'email' do
+      subject { Fabricate(:user) }
+      it { is_expected.to validate_uniqueness_of(:email) }
+      it 'is supposed to be a valid email address' do
+        user.email = 'random@email'
         expect(user).to_not be_valid
       end
     end
+
+    context 'names' do
+      subject { Fabricate(:user) }
+      it { is_expected.to validate_uniqueness_of(:name) }
+    end
+
+    # Password constraints are implemented and tested by Fabrication,
+    # so they don't need to be here.
   end
 end
